@@ -51,8 +51,9 @@ export default {
           }
         })
       .then(function (response) {
+                self.$store.dispatch(`getData`);
         alert(response.data);
-        //self.$store.dispatch(`getData`);
+
       })
       .catch(function (error) {
         console.log(error)

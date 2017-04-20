@@ -39,11 +39,12 @@ export default {
         })
       .then(function (response) {
         console.log(response.data);
-        localStorage.setItem("token",response.data);
+        self.$store.dispatch(`getData`);
       })
       .catch(function (error) {
         console.log(error)
       })
+
     }
   }
 }
