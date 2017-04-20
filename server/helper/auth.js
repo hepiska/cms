@@ -7,7 +7,8 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
-                    //req.headers.user = decoded
+                    req.body.user = decoded
+                    //console.log(req.body.user);
                     next()
                 }
             });

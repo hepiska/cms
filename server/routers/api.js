@@ -50,5 +50,7 @@ function(req,res){
 })
 router.post('/article',helper.auth,articleCon.create)
 router.get('/article',articleCon.views)
-
+router.get('/article/:id',articleCon.view)
+router.put('/article/:id',helper.auth,articleCon.update)
+router.delete('/article/:id',helper.auth,articleCon.delete)
 module.exports=router;
