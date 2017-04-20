@@ -10,7 +10,7 @@
             <el-input type="textarea" v-model="content"></el-input>
           </el-form-item>
           <el-form-item  label="content">
-                <el-button type="primary">edit</el-button>
+              <router-link :to="'/edit/'+propsartile._id"> <el-button type="primary">edit</el-button></router-link>
                 <el-button type="primary" @click='deletedata()'>delete</el-button>
           </el-form-item>
         </el-form>
@@ -51,7 +51,8 @@ export default {
           }
         })
       .then(function (response) {
-        console.log(response.data);
+        alert(response.data);
+        //self.$store.dispatch(`getData`);
       })
       .catch(function (error) {
         console.log(error)

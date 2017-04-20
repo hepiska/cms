@@ -38,7 +38,7 @@
           <el-button type="primary" v-popover:popoverLogin>login</el-button>
         </div>
       </el-col>
-      <el-col :span="6"><el-button type="primary">logout</el-button></el-col>
+      <el-col :span="6"><el-button type="primary" @click='logout()'>logout</el-button></el-col>
     </el-row>
    </div>
     <div class="contents">
@@ -79,6 +79,11 @@ export default {
   computed: {
    articles () {
     return this.$store.state.articles
+   }
+ },
+ methods:{
+   logout(){
+     localStorage.clear();
    }
  }
 }

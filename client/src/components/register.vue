@@ -38,7 +38,8 @@ export default {
         password:self.password
       })
       .then(function (response) {
-        console.log(response.data);
+        //console.log(response.data);
+        alert(response.data)
       })
       .catch(function (error) {
         console.log(error)

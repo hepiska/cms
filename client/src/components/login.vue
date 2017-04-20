@@ -33,11 +33,11 @@ export default {
         password:self.password
       })
       .then(function (response) {
-        console.log(response.data);
+        alert('login succees');
         localStorage.setItem("token",response.data);
       })
       .catch(function (error) {
-        console.log(error)
+        alert(error)
       })
     }
   }
