@@ -41,7 +41,15 @@
       <el-col :span="6"><el-button type="primary">logout</el-button></el-col>
     </el-row>
    </div>
+    <div class="contents">
+      <el-row :gutter="10">
+       <el-col :xs="24" :sm="24" :md="12" :lg="12" v-for='dataarticle in articles'>
+         <viewarticle v-bind:propsartile="dataarticle"></viewarticle>
+       </el-col>
 
+      </el-row>
+
+    </div>
 
    </div>
 </template>
@@ -50,18 +58,29 @@
 import Register from './register'
 import Login from './login'
 import Newarticle from './newarticle'
+import Viewarticle from './viewarticle'
 export default {
   name:'home',
   components:{
     Register,
     Login,
-    Newarticle
+    Newarticle,
+    Viewarticle
   },
+  mounted () {
+      this.$store.dispatch(`getData`);
+      //this.getdata()
+    },
   data(){
     return{
 
     }
-  }
+  },
+  computed: {
+   articles () {
+    return this.$store.state.articles
+   }
+ }
 }
 </script>
 
