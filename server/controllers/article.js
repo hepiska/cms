@@ -28,7 +28,7 @@ module.exports={
         } else {
           res.send(data)
         }
-
+      }).populate('author','name').exec(function(err,data){
       })
   },
   view: function(req,res){
